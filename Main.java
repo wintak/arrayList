@@ -1,35 +1,58 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 enum AgeGroup {
     YOUNG, MIDDLE_AGE, OLD;
 }
-
 public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-
         System.out.println("Enter your Name: ");
         String name = input.nextLine();
         System.out.println("Enter your Age: ");
         int age = input.nextInt();
 
         HashMap map = new HashMap();
-        map.put(name, age);
+     //   map.put(name, age);
+        map.put("Bob", 48);
+        map.put("Abby", 27);
+        map.put("Alex", 56);
+        map.put("Sally", 20);
 
         List user = new ArrayList();
-        user.add(name);
+       // user.add(name);
+        user.add("Bob");
+        user.add("Abby");
+        user.add("Alex");
+        user.add("Sally");
 
+        Iterator itt = user.iterator();
 
-         if(map.containsKey(name)){
-             System.out.println("-------------------");
-             System.out.println("Name: " + user);
-             System.out.println("Age: " + map.get(name));
+        while(itt.hasNext()){
+            String u = String.valueOf(itt.next());
+            if(u.equals(name)){
+                if(map.containsKey(u)){
+                    System.out.println(map.containsKey(u));
+                    System.out.println("-------------------");
+                    System.out.println("Name: " + u);
+                    System.out.println("Age: " + map.get(u));
+                    if (map.get(u).equals(age)){
+                        range(age);
+                    }else{
+                        range((Integer) map.get(u));
+                    }
+
+                }
+            }
          }
-        range(age);
+
+
+     }
+
+    private static synchronized void update(int x) {
+        System.out.println("--------------");
+        System.out.println("Updated Age");
+        System.out.println(x+1);
 
     }
 
