@@ -1,4 +1,4 @@
-# assignment1
+# arrayList
 program that accepts name and age from user in a map
 store name in ArrayList
 have enumerator type for age YOUNG, MIDDLE_AGE, OLD
